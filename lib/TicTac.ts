@@ -198,6 +198,9 @@ export class TicTacGame {
     const rand = () => Math.random() > 0.5 ? 1 : -1
     const now = this.player == 1 ? '011' : '022'
     const next = this.player == 2 ? '011' : '022'
+    
+    if(!this.#map[4])
+      return 4
 
     const forWin = rows.filter(e => {
       return e.map(e => e.v).sort().join('') == now
